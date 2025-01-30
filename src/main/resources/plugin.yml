@@ -1,6 +1,6 @@
 name: BlockMon
 main: me.sub.BlockMon.Main.Main
 description: Pokemon, but in Vanilla Minecraft
-author: Sub
+authors: [Sub]
 version: 1.0.0
 api-version: 1.21

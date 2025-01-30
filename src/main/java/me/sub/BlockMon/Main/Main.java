@@ -35,6 +35,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         files();
         events();
+        packets();
         commands();
     }
 
@@ -58,6 +59,10 @@ public class Main extends JavaPlugin {
     }
 
     private void files() {
+
+    }
+
+    private void packets() {
 
     }
 }

@@ -16,7 +16,7 @@ public class UserEnterInfoEvent implements Listener {
         UserData data = UserData.get(p.getUniqueId());
         if (data.isSetup()) {
             e.setCancelled(true);
-
+            // to be implemented
         }
     }
 }

@@ -16,7 +16,7 @@ public class User {
     public User(UUID uuid) {
         id = uuid;
         file = new File(Bukkit.getServer().getPluginManager().getPlugin("BlockMon").getDataFolder().getPath() + "/data/profiles/", id + ".yml");
-        customFile = YamlConfiguration.loadConfiguration(file);
+        customFile = YamlConfiguration.loadConfiguration(file); // yaml file
     }
 
     public Boolean exists() {

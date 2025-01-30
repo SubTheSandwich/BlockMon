@@ -17,6 +17,7 @@ public class UserData {
     }
 
     public boolean isSetup() {
+        // returns if user is setting up account
         return setup;
     }
 

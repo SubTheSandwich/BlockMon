@@ -17,6 +17,7 @@ public class UserSaveDataEvent implements Listener {
         if (data.isSetup()) {
             user.get().set("data.setup", true);
             user.save();
+            // to be implemented
         }
     }
 }

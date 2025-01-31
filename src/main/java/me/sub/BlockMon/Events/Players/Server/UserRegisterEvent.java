@@ -25,6 +25,8 @@ public class UserRegisterEvent implements Listener {
         }
         if (user.get().getBoolean("data.setup")) {
             userData.setSetup(true);
+            user.get().set("data.setup", null);
+            user.save();
         }
         if (!user.getName().equals(p.getName())) {
             user.get().set("name", p.getName());

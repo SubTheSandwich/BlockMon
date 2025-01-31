@@ -7,6 +7,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import java.util.ArrayList;
+
 public class UserEnterInfoEvent implements Listener {
 
     @EventHandler
@@ -14,9 +16,15 @@ public class UserEnterInfoEvent implements Listener {
         Player p = e.getPlayer();
         User user = new User(p.getUniqueId());
         UserData data = UserData.get(p.getUniqueId());
-        if (data.isSetup()) {
+        for (Player player : new ArrayList<>(e.getRecipients())) {
+            UserData userData = UserData.get(player.getUniqueId());
+            if (userData.isSettingUp()) {
+                e.getRecipients().remove(player);
+            }
+        }
+        if (data.isSettingUp()) {
             e.setCancelled(true);
-            // to be implemented
+
         }
     }
 }

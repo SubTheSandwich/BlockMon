@@ -1,0 +1,9 @@
+primary:
+  no-permission: "&cNo permission."
+  not-player: "&cOnly a player may execute this command."
+  not-alphanumeric: "&cYour inputted text must be alphanumeric."
+  not-letters: "&cYour inputted text must be letters only."
+
+events:
+  setup:
+    initial: "&eWelcome to BlockMon! To begin, please type your preferred name into the chat."

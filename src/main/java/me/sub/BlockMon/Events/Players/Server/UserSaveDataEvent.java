@@ -14,7 +14,7 @@ public class UserSaveDataEvent implements Listener {
         Player p = e.getPlayer();
         User user = new User(p.getUniqueId());
         UserData data = UserData.get(p.getUniqueId());
-        if (data.isSetup()) {
+        if (data.isSettingUp()) {
             user.get().set("data.setup", true);
             user.save();
             // to be implemented

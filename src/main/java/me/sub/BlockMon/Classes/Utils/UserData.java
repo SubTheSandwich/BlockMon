@@ -1,6 +1,8 @@
 package me.sub.BlockMon.Classes.Utils;
 
+import me.sub.BlockMon.Classes.Files.Town;
 import me.sub.BlockMon.Main.Main;
+import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
@@ -9,11 +11,13 @@ public class UserData {
     private boolean setup;
     private String preferredName;
     private String gender;
+    private TownData townData;
 
     public UserData() {
         setup = false;
         preferredName = null;
         gender = null;
+        townData = null;
     }
 
     public void setSetup(boolean setup) {
@@ -43,5 +47,17 @@ public class UserData {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public static UserData get(Player p) {
+        return Main.getInstance().data.get(p.getUniqueId());
+    }
+
+    public TownData getTownData() {
+        return townData;
+    }
+
+    public void setTownData(TownData townData) {
+        this.townData = townData;
     }
 }

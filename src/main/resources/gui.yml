@@ -1,0 +1,25 @@
+filler:
+  enabled: true
+  item: GRAY_STAINED_GLASS_PANE
+gui:
+  modify:
+    start:
+      name: "&eModify Town"
+      size: 27
+      items:
+        claim:
+          name: "&eClaim Area"
+          item: DIAMOND_HOE
+          slot: 11
+          lore:
+            - "&bSelect the town's area"
+            - "&7(Executing a new claim will"
+            - "&7remove any pre-existing claims)"
+        select:
+          name: "&bSelect Spawning Blockmons"
+          item: ALLAY_SPAWN_EGG
+          slot: 15
+          lore:
+            - "&eSelect which Blockmons"
+            - "&ewill spawn within the specified"
+            - "&eregion's borders in grass"

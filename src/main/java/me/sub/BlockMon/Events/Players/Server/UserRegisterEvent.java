@@ -1,6 +1,8 @@
 package me.sub.BlockMon.Events.Players.Server;
 
+import me.sub.BlockMon.Classes.Files.Locale;
 import me.sub.BlockMon.Classes.Files.User;
+import me.sub.BlockMon.Classes.Utils.C;
 import me.sub.BlockMon.Classes.Utils.UserData;
 import me.sub.BlockMon.Main.Main;
 import org.bukkit.entity.Player;
@@ -31,6 +33,9 @@ public class UserRegisterEvent implements Listener {
         if (!user.getName().equals(p.getName())) {
             user.get().set("name", p.getName());
             user.save();
+        }
+        if (userData.isSettingUp()) {
+            p.sendMessage(C.chat(Locale.get().getString("events.setup.initial")));
         }
         Main.getInstance().data.put(p.getUniqueId(), userData);
     }

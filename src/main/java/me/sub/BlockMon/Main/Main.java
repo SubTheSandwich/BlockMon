@@ -1,16 +1,13 @@
 package me.sub.BlockMon.Main;
 
-import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.events.ConnectionSide;
-import com.comphenix.protocol.events.PacketAdapter;
-import com.comphenix.protocol.events.PacketEvent;
-import me.sub.BlockMon.Classes.Files.User;
 import me.sub.BlockMon.Classes.Utils.UserData;
+import me.sub.BlockMon.Commands.Admin.BMDebugCommand;
+import me.sub.BlockMon.Commands.Admin.TownCommand;
 import me.sub.BlockMon.Events.Players.Chat.UserEnterInfoEvent;
+import me.sub.BlockMon.Events.Players.Inventory.Close.TownCloseEvents;
+import me.sub.BlockMon.Events.Players.Move.PreventSetupMovement;
 import me.sub.BlockMon.Events.Players.Server.UserRegisterEvent;
 import me.sub.BlockMon.Events.Players.Server.UserSaveDataEvent;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -45,7 +42,8 @@ public class Main extends JavaPlugin {
     }
 
     private void commands() {
-
+        getCommand("town").setExecutor(new TownCommand()); getCommand("town").setTabCompleter(new TownCommand());
+        getCommand("bmdebug").setExecutor(new BMDebugCommand()); getCommand("bmdebug").setTabCompleter(new BMDebugCommand());
     }
 
     private void events() {
@@ -56,10 +54,16 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new UserRegisterEvent(), this);
         pm.registerEvents(new UserEnterInfoEvent(), this);
         pm.registerEvents(new UserSaveDataEvent(), this);
+
+        pm.registerEvents(new PreventSetupMovement(), this);
+
+        pm.registerEvents(new TownCloseEvents(), this);
     }
 
     private void files() {
-
+        saveResource("locale.yml", false);
+        saveResource("config.yml", false);
+        saveResource("gui.yml", false);
     }
 
     private void packets() {

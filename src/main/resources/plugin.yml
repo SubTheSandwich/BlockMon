@@ -4,3 +4,8 @@ description: Pokemon, but in Vanilla Minecraft
 authors: [Sub]
 version: 1.0.0
 api-version: 1.21
+commands:
+  town:
+    description: Town command
+  bmdebug:
+    description: Blockmon Debug Command

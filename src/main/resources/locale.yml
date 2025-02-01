@@ -7,3 +7,24 @@ primary:
 events:
   setup:
     initial: "&eWelcome to BlockMon! To begin, please type your preferred name into the chat."
+    next: "&eYour name has successfully been set to &b%name%&e. Next, type your gender into the chat. Your options are: &d%gender-list%"
+    invalid-gender: "&cThe specified gender is invalid. Valid genders: %gender-list%"
+    finished: "&eYour gender has been set to &b%gender%&e. Your setup has been completed!"
+
+commands:
+  town:
+    usage: "&cUsage: /town <create/delete/modify> <town>"
+    not-exist: "&cA town by this name does not exist."
+    create:
+      already: "&cA town by this name already exists."
+      created: "&eYou have successfully &acreated &ea new town named &b%town%"
+    delete:
+      deleted: "&eYou have successfully &cdeleted &etown &b%town%"
+    modify:
+      already: "&cYou are already modifying a town."
+      message: "&eNow modifying &b%town%&e..."
+  bmdebug:
+    usage: "&cUsage: /blockmon <reload>"
+    reload:
+      start: "&eReloading all configuration files..."
+      success: "&aSuccessfully reloaded all configuration files! Took %time%"

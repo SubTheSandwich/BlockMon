@@ -1,0 +1,8 @@
+
+player:
+  blocked-preferred-names: # any case
+    - "CRACKER"
+  valid-genders:
+    - "Male"
+    - "Female"
+    - "Non-Binary"

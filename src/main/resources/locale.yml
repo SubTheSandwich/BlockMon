@@ -3,6 +3,7 @@ primary:
   not-player: "&cOnly a player may execute this command."
   not-alphanumeric: "&cYour inputted text must be alphanumeric."
   not-letters: "&cYour inputted text must be letters only."
+  full: "&cYour inventory is full."
 
 events:
   setup:
@@ -10,6 +11,10 @@ events:
     next: "&eYour name has successfully been set to &b%name%&e. Next, type your gender into the chat. Your options are: &d%gender-list%"
     invalid-gender: "&cThe specified gender is invalid. Valid genders: %gender-list%"
     finished: "&eYour gender has been set to &b%gender%&e. Your setup has been completed!"
+  town:
+    modify:
+      claim:
+        already: "&cYou are already claiming."
 
 commands:
   town:

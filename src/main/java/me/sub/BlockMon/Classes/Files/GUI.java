@@ -57,4 +57,16 @@ public class GUI {
         }
         player.openInventory(inventory);
     }
+
+    public static boolean matches(ItemStack item, String name, String which) {
+        ItemStack i = new ItemStack(Material.getMaterial(get().getString("gui." + name + ".items." + which + ".item")));
+        ItemMeta meta = i.getItemMeta();
+        ArrayList<String> lore = new ArrayList<>();
+        get().getStringList("gui." + name + ".items." + which + ".lore").forEach(l -> lore.add(C.chat(l)));
+        meta.setLore(lore);
+        meta.setDisplayName(C.chat(get().getString("gui." + name + ".items." + which + ".name")));
+        meta.addItemFlags(ItemFlag.values());
+        i.setItemMeta(meta);
+        return item.isSimilar(i);
+    }
 }

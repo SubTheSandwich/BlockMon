@@ -15,8 +15,9 @@ public class ProcessTallGrassMovement implements Listener {
         if (data.isSettingUp()) return;
         // First, checks if player's new location is not null, and is of grass type (e.g. short grass / tall grass)
         if (e.getTo() == null) return;
-        
         // Use block X and Z to do so
+        if (e.getFrom().getBlockX() == e.getTo().getBlockX() && e.getFrom().getBlockZ() == e.getTo().getBlockZ()) return;
+
         // If grass is not in a region, return
         // Randomizer to determine if a BlockMon spawns
         // References region file to determine which BlockMon's can spawn in the region
